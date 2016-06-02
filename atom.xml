@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://osgnu.com/"/>
-  <updated>2016-06-02T12:41:26.385Z</updated>
+  <updated>2016-06-02T12:45:13.078Z</updated>
   <id>http://osgnu.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>options</title>
+    <title>压力测试涉及的主要调试参数</title>
     <link href="http://osgnu.com/2016/06/02/options/"/>
     <id>http://osgnu.com/2016/06/02/options/</id>
     <published>2016-06-02T12:36:53.000Z</published>
-    <updated>2016-06-02T12:41:26.385Z</updated>
+    <updated>2016-06-02T12:45:13.078Z</updated>
     
     <content type="html">&lt;h1 id=&quot;压力测试的主要调试参数&quot;&gt;&lt;a href=&quot;#压力测试的主要调试参数&quot; class=&quot;headerlink&quot; title=&quot;压力测试的主要调试参数&quot;&gt;&lt;/a&gt;压力测试的主要调试参数&lt;/h1&gt;&lt;h2 id=&quot;一、Linux系统内核参数&quot;&gt;&lt;a href=&quot;#一、Linux系统内核参数&quot; class=&quot;headerlink&quot; title=&quot;一、Linux系统内核参数&quot;&gt;&lt;/a&gt;一、Linux系统内核参数&lt;/h2&gt;&lt;h3 id=&quot;1、-etc-sysctl-conf文件常用参数&quot;&gt;&lt;a href=&quot;#1、-etc-sysctl-conf文件常用参数&quot; class=&quot;headerlink&quot; title=&quot;1、/etc/sysctl.conf文件常用参数&quot;&gt;&lt;/a&gt;1、&lt;code&gt;/etc/sysctl.conf&lt;/code&gt;文件常用参数&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;net.core.netdev_max_backlog = 32768&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 允许送到队列的数据包的最大数目&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.core.rmem_max  = 8388608&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# SOCKET读缓存区大小&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.core.wmem_max  = 8388608&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# SOCKET写缓存区大小&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.core.somaxconn   = 32768&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 系统中每一个端口最大的监听队列的长度&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.core.rmem_max = 16777216&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 最大socket读buffer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.ip_local_port_range = 1024 65000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 允许系统打开的端口范围&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_fin_timeout  = 30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# TIME_WAIT2进入CLOSED的等待时间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_keepalive_time = 1200&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# TCP发送keepalive消息的时间&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_timestamps = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_synack_retries = 2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_syn_retries = 2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_synack_retries = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 内核放弃连接之前发送SYN+ACK包的数量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_syn_retries =1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 内核放弃建立连接之前发送SYN包的数量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_max_tw_buckets =6000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 控制TIME_WAIT的最大数量timewait的数量，默认是180000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_tw_recycle = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# TCP连接中TIME-WAIT套接字的快速回收。默认为0，表示关闭&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_tw_reuse = 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 允许将TIME-WAIT套接字重新用于新的TCP连接。默认为0，表示关闭&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_mem = 94500000 915000000 927000000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_max_orphans = 3276800&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;net.ipv4.tcp_max_syn_backlog = 65536&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# SYN队列的长度，默认为1024，加大队列长度为8192，可以容纳更多等待连接的网络连接数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fs.file-max = 65535&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 系统可打开的文件数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fs.nr_open  = 65535&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# fs.file-max的值不要超过fs.nr_open的值&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sysctl -p&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 使sysctl.conf文件的修改生效&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;2、-etc-security-limits-conf文件常用参数&quot;&gt;&lt;a href=&quot;#2、-etc-security-limits-conf文件常用参数&quot; class=&quot;headerlink&quot; title=&quot;2、/etc/security/limits.conf文件常用参数&quot;&gt;&lt;/a&gt;2、&lt;code&gt;/etc/security/limits.conf&lt;/code&gt;文件常用参数&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;在文件最末尾添加&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* soft nofile 65535&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* hard nofile 65535&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;查看是否生效&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# ulimit -a&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;手动修改（重启后失效）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# ulimit -n 65535&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -50,13 +50,7 @@
     
       <category term="Linux" scheme="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/Linux/"/>
     
-      <category term="Mysql" scheme="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/Linux/Mysql/"/>
-    
-      <category term="Nginx" scheme="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/Linux/Mysql/Nginx/"/>
-    
-      <category term="Tomcat" scheme="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/Linux/Mysql/Nginx/Tomcat/"/>
-    
-      <category term="压力测试" scheme="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/Linux/Mysql/Nginx/Tomcat/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
+      <category term="压力测试" scheme="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/Linux/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
     
     
       <category term="Linux" scheme="http://osgnu.com/tags/Linux/"/>
@@ -74,38 +68,11 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://osgnu.com/2016/06/02/hello-world/"/>
-    <id>http://osgnu.com/2016/06/02/hello-world/</id>
-    <published>2016-06-02T02:45:50.766Z</published>
-    <updated>2016-06-01T01:51:03.762Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>syn_flood</title>
+    <title>如何判断SYN_Flood攻击并处理</title>
     <link href="http://osgnu.com/2016/06/01/syn-flood/"/>
     <id>http://osgnu.com/2016/06/01/syn-flood/</id>
     <published>2016-06-01T14:24:07.000Z</published>
-    <updated>2016-06-02T06:01:12.161Z</updated>
+    <updated>2016-06-02T12:47:07.110Z</updated>
     
     <content type="html">&lt;h1 id=&quot;SYN-Flood的诊断和处理&quot;&gt;&lt;a href=&quot;#SYN-Flood的诊断和处理&quot; class=&quot;headerlink&quot; title=&quot;SYN Flood的诊断和处理&quot;&gt;&lt;/a&gt;SYN Flood的诊断和处理&lt;/h1&gt;&lt;h2 id=&quot;SYN-Flood介绍&quot;&gt;&lt;a href=&quot;#SYN-Flood介绍&quot; class=&quot;headerlink&quot; title=&quot;SYN Flood介绍&quot;&gt;&lt;/a&gt;SYN Flood介绍&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;    前段时间网站被攻击多次，其中最猛烈的就是TCP洪水攻击，即SYN Flood。
     SYN Flood是当前最流行的DoS（拒绝服务攻击）与DDoS（分布式拒绝服务攻击）的方式之一，这是一种利用
@@ -175,7 +142,7 @@ lead to an aproximate of 180 seconds delay before the connection times out.
     
     <summary type="html">
     
-      syn flood的诊断和处理
+      关于TCP_IP洪水流攻击(SYN_Flood)的诊断和处理
     
     </summary>
     
