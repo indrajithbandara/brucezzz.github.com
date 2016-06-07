@@ -4,7 +4,7 @@
 
     
   <url>
-    <loc>http://blog.osgnu.com/2016/06/01/syn-flood/</loc>
+    <loc>http://osgnu.com/2016/06/01/syn-flood/</loc>
     <lastmod>2016-06-06T01:45:30.529Z</lastmod>
     <data>
         <display>
@@ -22,7 +22,7 @@
          
            
              
-              <breadCrumb title="安全" url="http://blog.osgnu.com/categories/%E5%AE%89%E5%85%A8/"/>
+              <breadCrumb title="安全" url="http://osgnu.com/categories/%E5%AE%89%E5%85%A8/"/>
           
         </display>
     </data>
@@ -31,7 +31,7 @@
     
     
   <url>
-    <loc>http://blog.osgnu.com/2016/06/02/options/</loc>
+    <loc>http://osgnu.com/2016/06/02/options/</loc>
     <lastmod>2016-06-02T12:55:24.119Z</lastmod>
     <data>
         <display>
@@ -53,10 +53,10 @@
          
            
              
-              <breadCrumb title="调优" url="http://blog.osgnu.com/categories/%E8%B0%83%E4%BC%98/"/>
+              <breadCrumb title="调优" url="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/"/>
           
              
-              <breadCrumb title="压力测试" url="http://blog.osgnu.com/categories/%E8%B0%83%E4%BC%98/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
+              <breadCrumb title="压力测试" url="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
           
         </display>
     </data>
