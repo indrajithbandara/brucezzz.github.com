@@ -92,7 +92,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Bruce's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="布鲁斯的博客" type="application/atom+xml" />
 
 
 
@@ -108,9 +108,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何判断SYN_Flood攻击并处理">
 <meta property="og:url" content="http://osgnu.com/2016/06/01/syn-flood/index.html">
-<meta property="og:site_name" content="Bruce's Blog">
+<meta property="og:site_name" content="布鲁斯的博客">
 <meta property="og:description" content="关于TCP_IP洪水流攻击(SYN_Flood)的诊断和处理">
-<meta property="og:updated_time" content="2016-06-02T12:47:07.110Z">
+<meta property="og:updated_time" content="2016-06-06T01:45:30.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何判断SYN_Flood攻击并处理">
 <meta name="twitter:description" content="关于TCP_IP洪水流攻击(SYN_Flood)的诊断和处理">
@@ -131,7 +131,7 @@
   };
 </script>
 
-  <title> 如何判断SYN_Flood攻击并处理 | Bruce's Blog </title>
+  <title> 如何判断SYN_Flood攻击并处理 | 布鲁斯的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -172,7 +172,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Bruce's Blog</span>
+      <span class="site-title">布鲁斯的博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -382,9 +382,9 @@ TCP协议缺陷，发送大量伪造的TCP连接请求，常用假冒的IP或IP�
 </code></pre><h2 id="首先谈谈如何诊断"><a href="#首先谈谈如何诊断" class="headerlink" title="首先谈谈如何诊断"></a>首先谈谈如何诊断</h2><p>我们看到业务曲线大跌时，检查机器和DNS，发现只是对外的web机响应慢、CPU负载高、ssh登陆慢甚至有些机器登陆不上，检查系统syslog：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">＃ tail -f /var/log/messages</span><br><span class="line">Apr 18 11:21:56 web5 kernel: possible *SYN flooding* on port 80. Sending cookies.</span><br></pre></td></tr></table></figure>
 <p>检查连接数增多，并且SYN_RECV 连接特别多：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># netstat -n | awk &apos;/^tcp/ &#123;++S[$NF]&#125; END &#123;for(a in S) print a, S[a]&#125;&apos; </span><br><span class="line">TIME_WAIT 16855</span><br><span class="line">CLOSE_WAIT 21</span><br><span class="line">SYN_SENT 99</span><br><span class="line">FIN_WAIT1 229</span><br><span class="line">FIN_WAIT2 113</span><br><span class="line">ESTABLISHED 8358</span><br><span class="line">*SYN_RECV 48965*</span><br><span class="line">CLOSING 3</span><br><span class="line">LAST_ACK 313</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># netstat -n | awk &apos;/^tcp/ &#123;++S[$NF]&#125; END &#123;for(a in S) print a, S[a]&#125;&apos; </span><br><span class="line">TIME_WAIT 16855</span><br><span class="line">CLOSE_WAIT 21</span><br><span class="line">SYN_SENT 99</span><br><span class="line">FIN_WAIT1 229</span><br><span class="line">FIN_WAIT2 113</span><br><span class="line">ESTABLISHED 8358</span><br><span class="line">SYN_RECV 48965</span><br><span class="line">CLOSING 3</span><br><span class="line">LAST_ACK 313</span><br></pre></td></tr></table></figure>
 <p>根据经验，正常时检查连接数如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># netstat -n | awk &apos;/^tcp/ &#123;++S[$NF]&#125; END &#123;for(a in S) print a, S[a]&#125;&apos; </span><br><span class="line">TIME_WAIT 42349</span><br><span class="line">CLOSE_WAIT 1</span><br><span class="line">SYN_SENT 4</span><br><span class="line">FIN_WAIT1 298</span><br><span class="line">FIN_WAIT2 33</span><br><span class="line">ESTABLISHED 12775</span><br><span class="line">*SYN_RECV 259*</span><br><span class="line">CLOSING 6</span><br><span class="line">LAST_ACK 432</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># netstat -n | awk &apos;/^tcp/ &#123;++S[$NF]&#125; END &#123;for(a in S) print a, S[a]&#125;&apos; </span><br><span class="line">TIME_WAIT 42349</span><br><span class="line">CLOSE_WAIT 1</span><br><span class="line">SYN_SENT 4</span><br><span class="line">FIN_WAIT1 298</span><br><span class="line">FIN_WAIT2 33</span><br><span class="line">ESTABLISHED 12775</span><br><span class="line">SYN_RECV 259</span><br><span class="line">CLOSING 6</span><br><span class="line">LAST_ACK 432</span><br></pre></td></tr></table></figure>
 <p>以上就是TCP洪水攻击的两大特征。执行netstat -na &gt; 指定文件，保留罪证。</p>
 <h2 id="应急处理"><a href="#应急处理" class="headerlink" title="应急处理"></a>应急处理</h2><p>根据netstat查看到的对方IP特征：</p>
 <pre><code># netstat -na | grep SYN_RECV | more
