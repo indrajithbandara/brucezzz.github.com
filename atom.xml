@@ -4,9 +4,9 @@
   <subtitle>一个小运维的博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://osgnu.com/"/>
+  <link href="http://blog.osgnu.com/"/>
   <updated>2016-06-02T12:55:24.119Z</updated>
-  <id>http://osgnu.com/</id>
+  <id>http://blog.osgnu.com/</id>
   
   <author>
     <name>Bruce Zheng</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>压力测试涉及的主要调试参数</title>
-    <link href="http://osgnu.com/2016/06/02/options/"/>
-    <id>http://osgnu.com/2016/06/02/options/</id>
+    <link href="http://blog.osgnu.com/2016/06/02/options/"/>
+    <id>http://blog.osgnu.com/2016/06/02/options/</id>
     <published>2016-06-02T12:36:53.000Z</published>
     <updated>2016-06-02T12:55:24.119Z</updated>
     
@@ -46,29 +46,29 @@
     
     </summary>
     
-      <category term="调优" scheme="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/"/>
+      <category term="调优" scheme="http://blog.osgnu.com/categories/%E8%B0%83%E4%BC%98/"/>
     
-      <category term="压力测试" scheme="http://osgnu.com/categories/%E8%B0%83%E4%BC%98/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
+      <category term="压力测试" scheme="http://blog.osgnu.com/categories/%E8%B0%83%E4%BC%98/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="Linux" scheme="http://osgnu.com/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.osgnu.com/tags/Linux/"/>
     
-      <category term="Mysql" scheme="http://osgnu.com/tags/Mysql/"/>
+      <category term="Mysql" scheme="http://blog.osgnu.com/tags/Mysql/"/>
     
-      <category term="Nginx" scheme="http://osgnu.com/tags/Nginx/"/>
+      <category term="Nginx" scheme="http://blog.osgnu.com/tags/Nginx/"/>
     
-      <category term="Tomcat" scheme="http://osgnu.com/tags/Tomcat/"/>
+      <category term="Tomcat" scheme="http://blog.osgnu.com/tags/Tomcat/"/>
     
-      <category term="调优" scheme="http://osgnu.com/tags/%E8%B0%83%E4%BC%98/"/>
+      <category term="调优" scheme="http://blog.osgnu.com/tags/%E8%B0%83%E4%BC%98/"/>
     
-      <category term="压力测试" scheme="http://osgnu.com/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
+      <category term="压力测试" scheme="http://blog.osgnu.com/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>如何判断SYN_Flood攻击并处理</title>
-    <link href="http://osgnu.com/2016/06/01/syn-flood/"/>
-    <id>http://osgnu.com/2016/06/01/syn-flood/</id>
+    <link href="http://blog.osgnu.com/2016/06/01/syn-flood/"/>
+    <id>http://blog.osgnu.com/2016/06/01/syn-flood/</id>
     <published>2016-06-01T14:24:07.000Z</published>
     <updated>2016-06-06T01:45:30.529Z</updated>
     
@@ -144,16 +144,16 @@ lead to an aproximate of 180 seconds delay before the connection times out.
     
     </summary>
     
-      <category term="安全" scheme="http://osgnu.com/categories/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="http://blog.osgnu.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-      <category term="Syn Flood" scheme="http://osgnu.com/tags/Syn-Flood/"/>
+      <category term="Syn Flood" scheme="http://blog.osgnu.com/tags/Syn-Flood/"/>
     
-      <category term="洪水流" scheme="http://osgnu.com/tags/%E6%B4%AA%E6%B0%B4%E6%B5%81/"/>
+      <category term="洪水流" scheme="http://blog.osgnu.com/tags/%E6%B4%AA%E6%B0%B4%E6%B5%81/"/>
     
-      <category term="攻击" scheme="http://osgnu.com/tags/%E6%94%BB%E5%87%BB/"/>
+      <category term="攻击" scheme="http://blog.osgnu.com/tags/%E6%94%BB%E5%87%BB/"/>
     
-      <category term="安全" scheme="http://osgnu.com/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="安全" scheme="http://blog.osgnu.com/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
