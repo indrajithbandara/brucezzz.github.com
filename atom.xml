@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>布鲁斯的博客</title>
+  <title>Bruce&#39;s Blog</title>
   <subtitle>一个小运维的博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>http://blog.osgnu.com/</id>
   
   <author>
-    <name>Bruce Zheng</name>
+    <name>布鲁斯</name>
     
   </author>
   
